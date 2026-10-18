@@ -1,10 +1,10 @@
-# cookly.
+# cookly
 
 ## Responsibilities
 
 Проект разделен по технологическим специализациям. Каждый участник команды отвечает за свой слой системы.
 
-### 🎨 Frontend (Client-side)
+### 🎨 Frontend (Клиентская часть)
 
 * **Ответственный:** Алексей
 * **Стек:** HTML5, CSS3, Vanilla JS
@@ -12,7 +12,7 @@
 
 ---
 
-### ⚙️ Backend (Server-side)
+### ⚙️ Backend (Серверная часть)
 
 * **Ответственный:** me (@flap1kk - Арсений)
 * **Стек:** Hono (Node.js runtime), PostgreSQL
@@ -28,7 +28,7 @@
 
 ---
 
-### ✍️ Content Management
+### ✍️ Content Management (наполнение)
 
 * **Ответственная:** Лиза Аферова
 * **Стек:** Открытые веб-ресурсы, Excel
