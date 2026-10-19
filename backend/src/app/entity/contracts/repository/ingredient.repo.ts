@@ -1,5 +1,3 @@
-import type {DefaultEntityRepository} from "../abstractions/crud.repository";
-
 export type IngredientOutDTO = {
     id: number;
     name: string;
@@ -17,6 +15,10 @@ export type IngredientInDTO = {
 }
 
 
-export interface IngredientRepository extends DefaultEntityRepository<IngredientInDTO, IngredientOutDTO> { // TODO: Implement this
-    getIngredientByNameSuggestion(partOfName: string): Promise<IngredientOutDTO>;
+export interface IngredientRepository {
+    addIngredient(inDTO: IngredientInDTO): Promise<IngredientOutDTO>; // c
+    getIngredient(id: number): Promise<IngredientOutDTO>;
+    getIngredientsBySuggestion(partOfName: string): Promise<IngredientOutDTO>[]; // r
+    updateIngredient(id: number, inDTO: Partial<IngredientOutDTO>): Promise<IngredientOutDTO>; // u
+    deleteIngredient(id: number): Promise<void>; // D!!!!
 }
