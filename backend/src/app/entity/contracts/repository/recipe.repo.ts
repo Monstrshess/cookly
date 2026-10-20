@@ -28,8 +28,8 @@ export type RecipeInDTO = {
 }
 
 export interface RecipeRepository {  // TODO: Implement this
-    addIngredient(inDTO: IngredientInDTO): Promise<IngredientOutDTO>;
-    getIngredient(id: number): Promise<IngredientOutDTO>;
+    addRecipe(inDTO: RecipeInDTO): Promise<RecipeOutDTO>;
+    getRecipe(id: number): Promise<RecipeOutDTO>;
     getRecipesByNameSuggestion(partOfName: string): Promise<RecipeOutDTO>[];
     updateIngredient(id: number, inDTO: Partial<IngredientOutDTO>): Promise<IngredientOutDTO>;
     deleteIngredient(id: number): Promise<void>;
