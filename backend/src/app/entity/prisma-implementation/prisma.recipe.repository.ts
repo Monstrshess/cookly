@@ -7,7 +7,7 @@ export class PrismaRecipeRepository implements RecipeRepository {
         const {ingredients, ...recipeFields} = inDTO;
         return await db.transaction(async (trx) => {
             const recipe = await trx.orm.public.Recipe.create(recipeFields);
-            const recipeIngredients = await trx.orm.public.RecipeIngredient.createAll(ingredients.map(ingredient => ({recipeId: recipe.id, ...ingredient})));
+            await trx.orm.public.RecipeIngredient.createAll(ingredients.map(ingredient => ({recipeId: recipe.id, ...ingredient})));
             return recipe.id
         });
     }
