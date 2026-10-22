@@ -1,4 +1,4 @@
-import type {IngredientInDTO, IngredientOutDTO} from "./ingredient.repo";
+import type {IngredientOutDTO} from "./ingredient.repo";
 
 type RecipeIngredientOutDTO = {
     ingredient: IngredientOutDTO;
@@ -28,9 +28,11 @@ export type RecipeInDTO = {
 }
 
 export interface RecipeRepository {  // TODO: Implement this
-    addIngredient(inDTO: IngredientInDTO): Promise<IngredientOutDTO>;
-    getIngredient(id: number): Promise<IngredientOutDTO>;
-    getRecipesByNameSuggestion(partOfName: string): Promise<RecipeOutDTO>[];
-    updateIngredient(id: number, inDTO: Partial<IngredientOutDTO>): Promise<IngredientOutDTO>;
-    deleteIngredient(id: number): Promise<void>;
+    addRecipe(inDTO: RecipeInDTO): Promise<number>;
+    getRecipe(id: number): Promise<RecipeOutDTO>;
+    getRecipesByNameSuggestion(partOfName: string): Promise<RecipeOutDTO[]>;
+    getRecipesPage(page: number, perPage: number): Promise<RecipeOutDTO[]>;
+    getRecipesByIngredients(ids: number[]): Promise<RecipeOutDTO[]>;
+    updateRecipe(id: number, inDTO: Partial<RecipeInDTO>): Promise<RecipeOutDTO>;
+    deleteRecipe(id: number): Promise<void>;
 }
