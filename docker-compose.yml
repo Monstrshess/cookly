@@ -24,6 +24,3 @@ services:
       - DATABASE_URL=postgresql://admin:admin@postgres:5432/cookly?schema=public
     depends_on:
       - postgres
-
-volumes:
-  postgres_data:
